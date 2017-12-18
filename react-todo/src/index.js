@@ -1,6 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './containers/App';
+// Redux 관련
+import { createStore } from 'redux';
+import todoApp from './reducers';
+import { Provider } from 'react-redux';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+
+import App from './containers/App';
+import './index.css';
+
+import { addTodo, completeTodo, setVisibilityFilter, VisibilityFilters } from './actions/actions';
+
+// let store = createStore(todoApp);
+let store = createStore(todoApp);
+
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>, 
+document.getElementById('root'));

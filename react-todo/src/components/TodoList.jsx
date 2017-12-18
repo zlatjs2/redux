@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 
 class TodoList extends Component {
   render() {
+    console.log(this.props.todos)
     return (
       <ul>
         {this.props.todos.map((todo, index) =>
@@ -19,11 +20,16 @@ class TodoList extends Component {
 }
 
 TodoList.propTypes = {
-  onTodoClick: PropTypes.func.isRequired,
+  onTodoClick: PropTypes.func,
   todos: PropTypes.arrayOf(PropTypes.shape({
-    text: PropTypes.string.isRequired,
-    completed: PropTypes.bool.isRequired
-  }).isRequired).isRequired
+    text: PropTypes.string,
+    completed: PropTypes.bool
+  }))
 };
+
+TodoList.defaultProps = {
+  todos: [],
+}
+
 
 export default TodoList;
