@@ -9,7 +9,7 @@ class Counter extends Component {
   
   render() {
     const { count, color, onIncrement, onDecrement, onSetColor } = this.props;
-
+    
     return (
       <div>
         <NumberView
@@ -26,12 +26,10 @@ class Counter extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    count: state.count,
-    color: state.color,
-  }
-}
+const mapStateToProps = (state) => ({
+  count: state.count,
+  color: state.color,
+})
 
 const mapDispatchProps = (dispatch) => ({
   onIncrement: () => { dispatch(actions.increment()) },

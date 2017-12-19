@@ -8,7 +8,7 @@ export function increment() {
   }
 }
 
-export function decrement() {
+export function decrement(index) {
   return {
     type: counterTypes.DECREMENT
   }
@@ -20,6 +20,9 @@ export function setColor(color) {
     color
   }
 }
+
+
+
 
 export function changeFilter(filter) {
   return {

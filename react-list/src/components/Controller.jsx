@@ -8,15 +8,17 @@ class Controller extends Component {
 
     this.props.onSetColor(colors[idx])
   }
-  
-  render() {
-    const { onIncrement, onDecrement, onSetColor } = this.props;
 
+  render() {
+    const { index, onIncrement, onDecrement, onSetColor } = this.props;
+    
     return (
       <div>
-        <button onClick={onIncrement}>+</button>
-        <button onClick={onDecrement}>-</button>
-        <button onClick={this.setRandomColor.bind(this)}>randomCOlor</button>
+        <div>
+          <button onClick={onIncrement}>+</button>
+          <button onClick={onDecrement}>-</button>
+          <button onClick={this.setRandomColor.bind(this)}>randomCOlor</button>
+        </div>
       </div>
     );
   }
